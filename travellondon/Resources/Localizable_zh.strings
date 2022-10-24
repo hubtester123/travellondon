@@ -1,0 +1,24 @@
+/* 
+  Localizable_zh.strings
+  travellondon
+
+  Created by Tony Cheung on 20/10/2022.
+  
+*/
+
+"bar_title" = "探訪倫敦";
+
+"tabbar_explorer" = "探索";
+"tabbar_categories" = "類別";
+"tabbar_saved" = "保全";
+"tabbar_transport" = "交通";
+"tabbar_more" = "更多";
+
+"more_about_us" = "關於我們";
+"more_faq" = "F.A.Q.";
+"more_terms_and_condition" = "使用條款";
+"more_rate_at_appstore" = "喜歡這個程式？給我們一個讚！";
+"more_licesnses" = "牌照";
+"more_language" = "語言";
+"more_low_data" = "低流量模式";
+"more_disable_videos_and_gifs" = "關閉影片及GIF";

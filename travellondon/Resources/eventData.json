@@ -1,0 +1,22 @@
+[
+    {
+        "name" : "Magical things to do in October",
+        "imageUrl" : "https://images.unsplash.com/photo-1510759591315-6425cba413fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+        "gifUrl" : ""
+    },
+    {
+        "name" : "Unforgettable Priceless experiences",
+        "imageUrl" :"https://images.unsplash.com/photo-1533158307587-828f0a76ef46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
+        "gifUrl" : ""
+    },
+    {
+        "name" : "Top family experiences",
+        "imageUrl" :"https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80",
+        "gifUrl" : ""
+    },
+    {
+        "name" : "Top theatre shows",
+        "imageUrl" :"https://images.unsplash.com/photo-1579539760267-b2e78d9d735e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+        "gifUrl" : ""
+    }
+]

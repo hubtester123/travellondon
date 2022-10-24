@@ -1,0 +1,24 @@
+/* 
+  Localizable_en.strings
+  travellondon
+
+  Created by Tony Cheung on 20/10/2022.
+  
+*/
+
+"bar_title" = "VISIT LONDON";
+
+"tabbar_explorer" = "Explorer";
+"tabbar_categories" = "Categories";
+"tabbar_saved" = "Saved";
+"tabbar_transport" = "Transport";
+"tabbar_more" = "More";
+
+"more_about_us" = "About US";
+"more_faq" = "F.A.Q.";
+"more_terms_and_condition" = "Terms & Conditions";
+"more_rate_at_appstore" = "Like this app? Rate us on the App Store";
+"more_licesnses" = "Licenses";
+"more_language" = "Language";
+"more_low_data" = "Low Data Mode";
+"more_disable_videos_and_gifs" = "Disable videos and gifs";
