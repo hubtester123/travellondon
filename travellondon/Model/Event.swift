@@ -9,7 +9,6 @@ import Foundation
 
 struct Event: Codable, Hashable{
     
-    
     var name: String
     
     private var imageUrl: String

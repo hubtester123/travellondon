@@ -9,8 +9,9 @@ Mocking an app TravelLondon to practise SwiftUI
 | Goal               | Status      |
 | ------------------ | ----------- |
 | Explorer View      | Done        |
-| Event Detail View  |             |
-| Categories View    | WIP         |
+| Event Detail View  | WIP         |
+| Map View           |             |
+| Categories View    | Done        |
 | Favourite View     |             |
 | Setting View       | Done        |
 | Multi Language     | Done        |
@@ -20,6 +21,10 @@ Mocking an app TravelLondon to practise SwiftUI
 ExplorerView - 
 
 ![](explorerview.png)
+
+CategoriesView - 
+
+![](categoriesview.png)
 
 SettingView -
 

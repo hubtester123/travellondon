@@ -7,6 +7,8 @@
 */
 
 "bar_title" = "探訪倫敦";
+"bar_title_category" = "類別";
+
 
 "tabbar_explorer" = "探索";
 "tabbar_categories" = "類別";

@@ -11,13 +11,11 @@ import SwiftUI
 struct travellondonApp: App {
     
     @StateObject private var setting = Setting()
-    @ObservedObject private var viewControlSetting = ViewControlSetting()
+    @StateObject private var viewControlSetting = ViewControlSetting()
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(setting)
-                .environmentObject(viewControlSetting)
+            ContentView().environmentObject(setting).environmentObject(viewControlSetting)
         }
     }
 }

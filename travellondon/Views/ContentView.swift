@@ -14,6 +14,7 @@ struct ContentView: View {
     @EnvironmentObject var setting: Setting
     @EnvironmentObject var viewControlSetting: ViewControlSetting
     
+    @StateObject var navigationBarSetting: NavigationBarSetting = NavigationBarSetting()
     @State var selectedTab: SelectedTab = .explorer
     
     let tabItemMenu = ["explorer", "categories", "saved", "transport", "more"]
@@ -63,9 +64,10 @@ struct ContentView: View {
             VStack(spacing:0) {
                 
                 NavigationBar()
+                     .id(viewControlSetting.navigationBarViewId)
                      .padding(.top, getSafeAreaTop())
                      .background(.red)
-                
+                     .environmentObject(navigationBarSetting)
                 TabView(selection: $selectedTab) {
                     ExplorerView()
                         .id(viewControlSetting.explorerRootViewId)
@@ -76,9 +78,6 @@ struct ContentView: View {
                             }
                         }
                         .tag(SelectedTab.explorer)
-                        .onChange(of: selectedTab) { newValue in
-                            viewControlSetting.explorerRootViewId = UUID()
-                        }
                     CategoriesView()
                         .tabItem {
                             VStack{
@@ -86,21 +85,20 @@ struct ContentView: View {
                                 Text(tabItemString[1])
                             }
                         }.tag(SelectedTab.categories)
-                        .onChange(of: selectedTab) { newValue in
-                            viewControlSetting.caategoriesRootViewId = UUID()
-                        }
-                    TabView2().tabItem {
-                        VStack{
-                            Image(tabItemImage[2])
-                            Text(tabItemString[2])
-                        }
-                    }.tag(SelectedTab.saved)
-                    TabView2().tabItem {
-                        VStack{
-                            Image(tabItemImage[3])
-                            Text(tabItemString[3])
-                        }
-                    }.tag(SelectedTab.transport)
+                    TabView2()
+                        .tabItem {
+                            VStack{
+                                Image(tabItemImage[2])
+                                Text(tabItemString[2])
+                            }
+                        }.tag(SelectedTab.saved)
+                    TabView2()
+                        .tabItem {
+                            VStack{
+                                Image(tabItemImage[3])
+                                Text(tabItemString[3])
+                            }
+                        }.tag(SelectedTab.transport)
                     MoreView().tabItem {
                         VStack{
                             Image(tabItemImage[4])
@@ -108,9 +106,16 @@ struct ContentView: View {
                         }
                     }
                     .tag(SelectedTab.more)
+                } .onChange(of: selectedTab) { newValue in
+                    
+                    switch(newValue) {
+                    case .categories: navigationBarSetting.navigationBarMode = .categories
+                    default: navigationBarSetting.navigationBarMode = .defaultValue
+                    }
+                    
+                    viewControlSetting.caategoriesRootViewId = UUID()
                 }
             }
-            .environmentObject(setting)
         }.ignoresSafeArea(.all, edges: .top)
         
         
