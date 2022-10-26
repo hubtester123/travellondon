@@ -24,7 +24,7 @@ ExplorerView -
 
 CategoriesView - 
 
-![](categoriesview.png)
+![](categories.png)
 
 SettingView -
 
