@@ -13,8 +13,8 @@ struct ContentView: View {
     
     @EnvironmentObject var setting: Setting
     @EnvironmentObject var viewControlSetting: ViewControlSetting
+    @EnvironmentObject var navigationBarSetting: NavigationBarSetting
     
-    @StateObject var navigationBarSetting: NavigationBarSetting = NavigationBarSetting()
     @State var selectedTab: SelectedTab = .explorer
     
     let tabItemMenu = ["explorer", "categories", "saved", "transport", "more"]
@@ -109,11 +109,14 @@ struct ContentView: View {
                 } .onChange(of: selectedTab) { newValue in
                     
                     switch(newValue) {
-                    case .categories: navigationBarSetting.navigationBarMode = .categories
+                    case .explorer:
+                        navigationBarSetting.navigationBarMode = .defaultValue
+                        viewControlSetting.explorerRootViewId = UUID()
+                    case .categories:
+                        navigationBarSetting.navigationBarMode = .categories
+                        viewControlSetting.caategoriesRootViewId = UUID()
                     default: navigationBarSetting.navigationBarMode = .defaultValue
                     }
-                    
-                    viewControlSetting.caategoriesRootViewId = UUID()
                 }
             }
         }.ignoresSafeArea(.all, edges: .top)

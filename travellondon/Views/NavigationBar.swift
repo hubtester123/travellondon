@@ -11,32 +11,86 @@ struct NavigationBar: View {
     
     @EnvironmentObject var setting: Setting
     @EnvironmentObject var navigationBarSetting: NavigationBarSetting
-
     
     var body: some View {
-        HStack {
-            Spacer()
-            Text(localizedString(key:navigationBarSetting.navigationBarTitle, language:setting.appLanguage))
-                .font(navigationBarSetting.navigationBarFont)
-                .fontWeight(navigationBarSetting.navigationBarFontWeight)
-                .foregroundColor(Color.white)
-            Spacer()
-            
-        }.background(Color.red)
-            .frame(height:44.0)
         
+        switch (navigationBarSetting.navigationBarMode) {
+        case .defaultValue:
+            navigationBarTitleOnly()
+        case .categories:
+            navigationBarTitleOnly()
+        case .eventDetail:
+            navigationBarEventDetail()
+        }
     }
+    
+    private func navigationBarTitleOnly() -> some View {
+        
+        return HStack {
+                Spacer()
+                Text(localizedString(key:navigationBarSetting.navigationBarTitle, language:setting.appLanguage))
+                    .font(navigationBarSetting.navigationBarFont)
+                    .fontWeight(navigationBarSetting.navigationBarFontWeight)
+                    .foregroundColor(Color.white)
+                    .lineLimit(1)
+                Spacer()
+            }.background(Color.red)
+                .frame(height:44.0)
+    }
+    
+    private func navigationBarEventDetail() -> some View {
+        
+        return HStack {
+            
+                Button {
+                    navigationBarSetting.showEventDetail = false
+                    navigationBarSetting.navigationBarMode = .defaultValue
+                } label: {
+                    Image(systemName: "chevron.backward")
+                        .foregroundColor(.white)
+                        .font(.system(size: 22))
+                }.padding([.leading, .trailing], 10)
+                Text(localizedString(key:navigationBarSetting.navigationBarTitle, language:setting.appLanguage))
+                    .font(navigationBarSetting.navigationBarFont)
+                    .fontWeight(navigationBarSetting.navigationBarFontWeight)
+                    .foregroundColor(Color.white)
+                    .lineLimit(1)
+                Button {
+                } label: {
+                    Image(systemName: "square.and.arrow.up")
+                        .foregroundColor(.white)
+                        .font(.system(size: 22))
+                }.padding(.leading, 10)
+                .padding(.trailing, 5)
+            
+                Button {
+                } label: {
+                    Text("Map")
+                        .foregroundColor(.white)
+                }.padding(.leading, 5)
+                .padding(.trailing, 10)
+            }.background(Color.red)
+                .frame(height:44.0)
+        }
 }
 
-//struct NavigationBar_Previews: PreviewProvider {
-//
-//   // @State var navigationBarSetting: NavigationBarSetting = NavigationBarSetting()
-//
-//    static var previews: some View {
-//        let setting = Setting()
-//        NavigationBar(navigationBarSetting: navigationBarSetting).environmentObject(setting)
-//    }
-//}
+struct NavigationBar_Previews: PreviewProvider {
+    
+    static var setting = Setting()
+    static var navigationBarSetting = NavigationBarSetting()
+    
+    static var eventDetailNavigationBarSetting = NavigationBarSetting(navigationBarMode: .eventDetail, customBarTitle: "The Lion King: The Musical ar the Lyceum Theatre")
+    
+    static var previews: some View {
+        NavigationBar()
+            .environmentObject(setting)
+            .environmentObject(navigationBarSetting)
+        
+        NavigationBar()
+            .environmentObject(setting)
+            .environmentObject(eventDetailNavigationBarSetting)
+    }
+}
 
 
 

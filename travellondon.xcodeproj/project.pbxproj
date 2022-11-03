@@ -32,6 +32,7 @@
 		A88DC4882906014E00252F8A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DC4652903FC3800252F8A /* Constant.swift */; };
 		A88DC4892906015100252F8A /* travellondonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BA70A928FD611500D9B122 /* travellondonApp.swift */; };
 		A88DC48A2906015400252F8A /* TabView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BA70D928FD6DA100D9B122 /* TabView2.swift */; };
+		A89975AC2912ED490087F8D8 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89975AB2912ED490087F8D8 /* Drawing.swift */; };
 		A8BA70AA28FD611500D9B122 /* travellondonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BA70A928FD611500D9B122 /* travellondonApp.swift */; };
 		A8BA70AC28FD611500D9B122 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BA70AB28FD611500D9B122 /* ContentView.swift */; };
 		A8BA70AE28FD611600D9B122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8BA70AD28FD611600D9B122 /* Assets.xcassets */; };
@@ -57,6 +58,13 @@
 		A8EA5CFE2908445A00734853 /* DisplayCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5CFD2908445A00734853 /* DisplayCategory.swift */; };
 		A8EA5D00290895DD00734853 /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5CFF290895DD00734853 /* CategoryListViewModel.swift */; };
 		A8EA5D02290896FD00734853 /* NavigationBarSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5D01290896FD00734853 /* NavigationBarSetting.swift */; };
+		A8EA5D40290FD1F900734853 /* EventDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5D3F290FD1F900734853 /* EventDetailViewModel.swift */; };
+		A8EA5D42290FD22F00734853 /* FileLoadingUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5D41290FD22F00734853 /* FileLoadingUtility.swift */; };
+		A8EA5D44290FD25C00734853 /* EventDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5D43290FD25C00734853 /* EventDetail.swift */; };
+		A8EA5D48290FE13A00734853 /* eventDetailData.json in Resources */ = {isa = PBXBuildFile; fileRef = A8EA5D47290FD46800734853 /* eventDetailData.json */; };
+		A8EA5D4C29103DFC00734853 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5D4B29103DFC00734853 /* PageViewController.swift */; };
+		A8EA5D4E29103FFA00734853 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5D4D29103FFA00734853 /* PageView.swift */; };
+		A8EA5D502912802500734853 /* StringProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5D4F2912802500734853 /* StringProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +92,7 @@
 		A88DC46F2904A99C00252F8A /* ViewControlSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControlSetting.swift; sourceTree = "<group>"; };
 		A88DC4712904AF9100252F8A /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		A88DC4752905EF6800252F8A /* LocalizationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManagerTests.swift; sourceTree = "<group>"; };
+		A89975AB2912ED490087F8D8 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		A8BA70A628FD611500D9B122 /* travellondon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travellondon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8BA70A928FD611500D9B122 /* travellondonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = travellondonApp.swift; sourceTree = "<group>"; };
 		A8BA70AB28FD611500D9B122 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +121,13 @@
 		A8EA5CFD2908445A00734853 /* DisplayCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCategory.swift; sourceTree = "<group>"; };
 		A8EA5CFF290895DD00734853 /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
 		A8EA5D01290896FD00734853 /* NavigationBarSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarSetting.swift; sourceTree = "<group>"; };
+		A8EA5D3F290FD1F900734853 /* EventDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewModel.swift; sourceTree = "<group>"; };
+		A8EA5D41290FD22F00734853 /* FileLoadingUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoadingUtility.swift; sourceTree = "<group>"; };
+		A8EA5D43290FD25C00734853 /* EventDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetail.swift; sourceTree = "<group>"; };
+		A8EA5D47290FD46800734853 /* eventDetailData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = eventDetailData.json; sourceTree = "<group>"; };
+		A8EA5D4B29103DFC00734853 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		A8EA5D4D29103FFA00734853 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		A8EA5D4F2912802500734853 /* StringProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +160,7 @@
 			children = (
 				A88DC4682903FDA100252F8A /* UICollectionReusableView.swift */,
 				A88DC4712904AF9100252F8A /* UINavigationController.swift */,
+				A8EA5D4F2912802500734853 /* StringProtocol.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -194,6 +211,7 @@
 		A8BA70A828FD611500D9B122 /* travellondon */ = {
 			isa = PBXGroup;
 			children = (
+				A8EA5D4929103CE800734853 /* UI */,
 				A88DC4672903FD7C00252F8A /* Extension */,
 				A8BA71012901A0FC00D9B122 /* ViewModel */,
 				A8BA70F82901320E00D9B122 /* Model */,
@@ -248,8 +266,9 @@
 		A8BA70DF28FEB4C000D9B122 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A88DC46C2904063200252F8A /* Event */,
 				A8BA70AB28FD611500D9B122 /* ContentView.swift */,
+				A8EA5D4A29103DF100734853 /* Common */,
+				A88DC46C2904063200252F8A /* Event */,
 				A8BA70D528FD6D5300D9B122 /* NavigationBar.swift */,
 				A8BA70E028FEB4C700D9B122 /* Explorer */,
 				A8BA70DC28FEB4A000D9B122 /* Categories */,
@@ -279,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				A8BA70FD2901A04300D9B122 /* eventData.json */,
+				A8EA5D47290FD46800734853 /* eventDetailData.json */,
 				A8BA70F22900B2F400D9B122 /* Localizable_en.strings */,
 				A8BA70F42900B31300D9B122 /* Localizable_zh.strings */,
 				A8BA70F62900B33B00D9B122 /* Localizable_test.strings */,
@@ -291,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				A8BA70EE28FF545A00D9B122 /* LocalizationManager.swift */,
+				A8EA5D41290FD22F00734853 /* FileLoadingUtility.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -299,10 +320,11 @@
 			isa = PBXGroup;
 			children = (
 				A8BA70F92901321A00D9B122 /* Setting.swift */,
-				A8BA70FF2901A06900D9B122 /* Event.swift */,
-				A88DC46F2904A99C00252F8A /* ViewControlSetting.swift */,
-				A8EA5CFD2908445A00734853 /* DisplayCategory.swift */,
 				A8EA5D01290896FD00734853 /* NavigationBarSetting.swift */,
+				A88DC46F2904A99C00252F8A /* ViewControlSetting.swift */,
+				A8BA70FF2901A06900D9B122 /* Event.swift */,
+				A8EA5CFD2908445A00734853 /* DisplayCategory.swift */,
+				A8EA5D43290FD25C00734853 /* EventDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,8 +334,26 @@
 			children = (
 				A8BA71022901A11200D9B122 /* ExploreListViewModel.swift */,
 				A8EA5CFF290895DD00734853 /* CategoryListViewModel.swift */,
+				A8EA5D3F290FD1F900734853 /* EventDetailViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A8EA5D4929103CE800734853 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A8EA5D4A29103DF100734853 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A8EA5D4B29103DFC00734853 /* PageViewController.swift */,
+				A8EA5D4D29103FFA00734853 /* PageView.swift */,
+				A89975AB2912ED490087F8D8 /* Drawing.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,6 +463,7 @@
 			files = (
 				A8BA70F52900B31300D9B122 /* Localizable_zh.strings in Resources */,
 				A8BA70D428FD672600D9B122 /* Launch Screen.storyboard in Resources */,
+				A8EA5D48290FE13A00734853 /* eventDetailData.json in Resources */,
 				A8BA70FE2901A04300D9B122 /* eventData.json in Resources */,
 				A8BA70B128FD611600D9B122 /* Preview Assets.xcassets in Resources */,
 				A8BA70F32900B2F400D9B122 /* Localizable_en.strings in Resources */,
@@ -454,21 +495,28 @@
 			files = (
 				A88DC46E2904064700252F8A /* EventDetailView.swift in Sources */,
 				A8BA71032901A11200D9B122 /* ExploreListViewModel.swift in Sources */,
+				A8EA5D502912802500734853 /* StringProtocol.swift in Sources */,
 				A8BA70FA2901321A00D9B122 /* Setting.swift in Sources */,
 				A88DC4662903FC3800252F8A /* Constant.swift in Sources */,
 				A8EA5D00290895DD00734853 /* CategoryListViewModel.swift in Sources */,
 				A8BA71002901A06900D9B122 /* Event.swift in Sources */,
+				A8EA5D40290FD1F900734853 /* EventDetailViewModel.swift in Sources */,
+				A89975AC2912ED490087F8D8 /* Drawing.swift in Sources */,
 				A88DC46B2903FF7D00252F8A /* CategoriesCellView.swift in Sources */,
 				A8BA70EF28FF545A00D9B122 /* LocalizationManager.swift in Sources */,
 				A8BA70E728FF160600D9B122 /* MoreView.swift in Sources */,
 				A8BA70DA28FD6DA100D9B122 /* TabView2.swift in Sources */,
+				A8EA5D4C29103DFC00734853 /* PageViewController.swift in Sources */,
 				A88DC4692903FDA100252F8A /* UICollectionReusableView.swift in Sources */,
 				A8BA70AC28FD611500D9B122 /* ContentView.swift in Sources */,
 				A8BA70AA28FD611500D9B122 /* travellondonApp.swift in Sources */,
 				A8BA70DE28FEB4AF00D9B122 /* CategoriesView.swift in Sources */,
 				A8EA5CFE2908445A00734853 /* DisplayCategory.swift in Sources */,
+				A8EA5D4E29103FFA00734853 /* PageView.swift in Sources */,
 				A8EA5D02290896FD00734853 /* NavigationBarSetting.swift in Sources */,
+				A8EA5D44290FD25C00734853 /* EventDetail.swift in Sources */,
 				A8BA70F1290064FD00D9B122 /* ExplorerCellView.swift in Sources */,
+				A8EA5D42290FD22F00734853 /* FileLoadingUtility.swift in Sources */,
 				A8BA70D628FD6D5300D9B122 /* NavigationBar.swift in Sources */,
 				A88DC4722904AF9100252F8A /* UINavigationController.swift in Sources */,
 				A8BA70E228FEB5BA00D9B122 /* ExplorerView.swift in Sources */,

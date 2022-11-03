@@ -1,0 +1,17 @@
+{
+   "image":[
+      "lionking_image1",
+      "lionking_image2",
+      "lionking_image3"
+   ],
+   "name":"The Lion King: The Musical ar the Lyceum Theatre",
+   "date":"2023/06/17",
+   "address":"Wellington Street, London, WC2E 7RQ",
+   "shortDescription":"Follow Simba's adventures in The Lion King Musical at the Lyceum Theatre in London's West End",
+   "moreDescription":"\n\nBased on the Disney animated film, The Lion King premiered on Broadway in 1997 and The Lion King London opened in October 1999, playing to packed houses ever since!\n\nThe Lion King Musical transports audiences to a dazzling world that explodes with glorious colours, stunning effects and enchanting music. At its heart is the powerful and moving story of Simba - the epic adventure of his journey from wide-eyed cub to his destined role as King of the Pridelands.\n\nBrilliantly reimagined by acclaimed director Julie Taymor, Disney’s beloved film has been transformed into a spectacular theatrical experience that explodes with glorious colours, stunning effects and enchanting music.",
+   "prices":{
+      "adult":29.75,
+      "child":13.00
+   },
+   "buyTicketURL":"https://secure.londonticketclub.co.uk/city/2957-london/1DR6R-disneys-the-lion-king/"
+}

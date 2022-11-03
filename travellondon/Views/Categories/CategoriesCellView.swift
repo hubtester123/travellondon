@@ -97,8 +97,8 @@ struct CategoriesCellView: View {
 }
 
 struct CategoriesCellView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        
         let categories = DisplayCategory(displayCategories:["nearme" , "offers", "mustsee", "priceless", "free"])
         CategoriesCellView(categories: categories)
     }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ExplorerView: View {
     
+    @EnvironmentObject var navigationBarSetting: NavigationBarSetting
+    
     private var exploreListViewModel = ExploreListViewModel()
     
     init() {
@@ -22,7 +24,8 @@ struct ExplorerView: View {
                     
                     ZStack {
                         ExplorerCellView(event: event)
-                        NavigationLink(destination: EventDetailView().navigationBarBackButtonHidden(true)) {
+                        NavigationLink(destination: EventDetailView().navigationBarBackButtonHidden(true),
+                                       isActive: $navigationBarSetting.showEventDetail) {
                             EmptyView()
                         }
                         .frame(width: 0)

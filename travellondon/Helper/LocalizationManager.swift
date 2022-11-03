@@ -7,13 +7,13 @@
 
 import Foundation
 
-func localizedString(key:String, language:String = "", defaultResult:String = "") -> String {
+func localizedString(key:String, language:String = "", defaultResult:String? = nil) -> String {
     
-    guard let url = getBundleURL(language: language) else { return defaultResult }
+    guard let url = getBundleURL(language: language) else { return defaultResult == nil ? key : defaultResult! }
     
-    guard let stringDictionary = NSDictionary(contentsOf: url) as? [String: String] else { return defaultResult }
+    guard let stringDictionary = NSDictionary(contentsOf: url) as? [String: String] else { return defaultResult == nil ? key : defaultResult! }
             
-    guard let result = stringDictionary[key] else { return defaultResult }
+    guard let result = stringDictionary[key] else { return defaultResult == nil ? key : defaultResult!  }
     
     return result
 }

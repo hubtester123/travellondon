@@ -32,25 +32,6 @@ struct CategoriesView: View {
             }
         }
     }
-    
-    func buttonView(destination:some View, imageString: String, width:CGFloat, height:CGFloat) -> some View {
-        
-        return (
-            ZStack {
-                NavigationLink(destination: destination) {
-                    EmptyView()
-                }.frame(width: 0)
-                    .opacity(0)
-                
-                Button(action: {},
-                       label: {
-                    Image(imageString)
-                        .resizable()
-                        .frame(width: width, height: height)
-                        .cornerRadius(5.0)
-                }).buttonStyle(PlainButtonStyle())
-            })
-    }
 }
 
 struct CategoriesView_Previews: PreviewProvider {
