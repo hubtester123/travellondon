@@ -6,21 +6,27 @@ Mocking an app TravelLondon to practise SwiftUI
 
 ## Goal:
 
-| Goal               | Status      |
-| ------------------ | ----------- |
-| Explorer View      | Done        |
-| Event Detail View  | WIP         |
-| Map View           |             |
-| Categories View    | Done        |
-| Favourite View     |             |
-| Setting View       | Done        |
-| Multi Language     | Done        |
+| Goal               | Status      | Skill
+| ------------------ | ----------- |----------- |
+| Explorer View | Done | SwiftUI
+| Event Detail View | Done | Path <br> Transition <br> Intergrate with UIKit
+| Map View | |
+| Categories View | Done | SwiftUI
+| Favourite View | WIP |
+| Setting View | Done |
+| Multi Language | Done | Userdefault
 
 ## Screenshot:
 
 ExplorerView - 
 
 ![](explorerview.png)
+
+EventDetailView -
+
+![](eventdetailview.png)
+
+![](eventdetailview.gif)
 
 CategoriesView - 
 
