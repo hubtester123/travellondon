@@ -51,9 +51,7 @@ class NavigationBarSetting: ObservableObject {
         }
     }
     
-    init() {
-        
-    }
+    init() {}
     
     init(navigationBarMode: NagvigationBarMode, showEventDetail: Bool = false, customBarTitle: String) {
         self.navigationBarMode = navigationBarMode

@@ -72,6 +72,9 @@ struct EventDetailView: View {
         }.onAppear {
             navigationBarSetting.customBarTitle = eventDetailViewModel.eventDetail.name
             navigationBarSetting.navigationBarMode = .eventDetail
+        }.onDisappear {
+            navigationBarSetting.showEventDetail = false
+            navigationBarSetting.navigationBarMode = .defaultValue
         }
     }
     

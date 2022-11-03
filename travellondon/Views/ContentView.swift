@@ -64,7 +64,6 @@ struct ContentView: View {
             VStack(spacing:0) {
                 
                 NavigationBar()
-                     .id(viewControlSetting.navigationBarViewId)
                      .padding(.top, getSafeAreaTop())
                      .background(.red)
                      .environmentObject(navigationBarSetting)
@@ -107,16 +106,14 @@ struct ContentView: View {
                     }
                     .tag(SelectedTab.more)
                 } .onChange(of: selectedTab) { newValue in
-                    
                     switch(newValue) {
                     case .explorer:
                         navigationBarSetting.navigationBarMode = .defaultValue
-                        viewControlSetting.explorerRootViewId = UUID()
                     case .categories:
                         navigationBarSetting.navigationBarMode = .categories
-                        viewControlSetting.caategoriesRootViewId = UUID()
                     default: navigationBarSetting.navigationBarMode = .defaultValue
                     }
+                    viewControlSetting.refreshTabView()
                 }
             }
         }.ignoresSafeArea(.all, edges: .top)
