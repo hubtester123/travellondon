@@ -16,6 +16,10 @@ Mocking an app TravelLondon to practise SwiftUI
 | Setting View | Done |
 | Multi Language | Done | Userdefault
 
+## TLDR:
+
+![](xcuitest.gif)
+
 ## Screenshot:
 
 ExplorerView - 
@@ -25,8 +29,6 @@ ExplorerView -
 EventDetailView -
 
 ![](eventdetailview.png)
-
-![](eventdetailview.gif)
 
 CategoriesView - 
 
