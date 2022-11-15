@@ -92,6 +92,7 @@ struct CategoriesCellView: View {
                         .frame(width: width, height: height)
                         .cornerRadius(5.0)
                 }).buttonStyle(PlainButtonStyle())
+                    .accessibilityIdentifier(imageString)
             })
     }
 }

@@ -20,4 +20,10 @@ struct Event: Codable, Hashable{
     var gifLink: URL? {
         URL(string: gifUrl) ?? nil
     }
+    
+    init(name: String, imageUrl: String, gifUrl: String) {
+        self.name = name
+        self.imageUrl = imageUrl
+        self.gifUrl = gifUrl
+    }
 }

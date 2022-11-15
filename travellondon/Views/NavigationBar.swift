@@ -33,6 +33,7 @@ struct NavigationBar: View {
                     .fontWeight(navigationBarSetting.navigationBarFontWeight)
                     .foregroundColor(Color.white)
                     .lineLimit(1)
+                    .accessibilityIdentifier("navigationBarTitleLabel")
                 Spacer()
             }.background(Color.red)
                 .frame(height:44.0)
@@ -50,11 +51,13 @@ struct NavigationBar: View {
                         .foregroundColor(.white)
                         .font(.system(size: 22))
                 }.padding([.leading, .trailing], 10)
+                .accessibilityIdentifier("eventDetailNavigationBarBackButton")
                 Text(localizedString(key:navigationBarSetting.navigationBarTitle, language:setting.appLanguage))
                     .font(navigationBarSetting.navigationBarFont)
                     .fontWeight(navigationBarSetting.navigationBarFontWeight)
                     .foregroundColor(Color.white)
                     .lineLimit(1)
+                    .accessibilityIdentifier("eventDetailNavigationBarTitleLabel")
                 Button {
                 } label: {
                     Image(systemName: "square.and.arrow.up")
@@ -62,13 +65,14 @@ struct NavigationBar: View {
                         .font(.system(size: 22))
                 }.padding(.leading, 10)
                 .padding(.trailing, 5)
-            
+                .accessibilityIdentifier("eventDetailNavigationBarShareButton")
                 Button {
                 } label: {
                     Text("Map")
                         .foregroundColor(.white)
                 }.padding(.leading, 5)
                 .padding(.trailing, 10)
+                .accessibilityIdentifier("eventDetailNavigationMapButton")
             }.background(Color.red)
                 .frame(height:44.0)
         }

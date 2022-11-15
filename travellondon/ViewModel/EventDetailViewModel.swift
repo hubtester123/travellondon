@@ -8,6 +8,6 @@
 import Foundation
 
 final class EventDetailViewModel: ObservableObject {
-    
-    @Published var eventDetail: EventDetail = load("eventDetailData.json")
+
+    @Published var eventDetail: EventDetail = try! loadFileToJSON("eventDetailData.json", type: EventDetail.self) as! EventDetail
 }

@@ -13,7 +13,7 @@ struct travellondonApp: App {
     @StateObject private var setting = Setting()
     @StateObject private var viewControlSetting = ViewControlSetting()
     @StateObject private var navigationBarSetting = NavigationBarSetting()
-    
+        
     var body: some Scene {
         WindowGroup {
             ContentView()

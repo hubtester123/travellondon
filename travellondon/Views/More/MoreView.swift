@@ -51,11 +51,13 @@ struct MoreView: View {
             Picker(localizedString(key:"more_language", language:setting.appLanguage), selection: $setting.appLanguage) {
                   ForEach(appLanguageArray, id: \.self) {
                       Text(getDisplayLanguage(language:$0))
+                          .accessibilityIdentifier($0)
                   }
             }
             .listRowBackground(Color.black)
             .foregroundColor(Color.white)
             .listRowSeparatorTint(Color(red: 0.541, green: 0.541, blue: 0.55))
+            .accessibilityIdentifier("languagePicker")
             
 
             Toggle(isOn: $setting.isLowData) {

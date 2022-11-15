@@ -22,13 +22,16 @@ struct EventDetailView: View {
                 
                 VStack(spacing: 0) {
                     
-                    PageView(pages:eventDetailViewModel.eventDetail.image.map({ imageString in
-                        Image(imageString)
-                            .resizable()
-                            .scaledToFit()
-                    })).frame(width:proxy.size.width,
-                              height:proxy.size.width * 466.0 / 823.0)
-                            .background(.red)
+                    
+                    if let imageArray = eventDetailViewModel.eventDetail.image {
+                        PageView(pages:imageArray.map({ imageString in
+                            Image(imageString)
+                                .resizable()
+                                .scaledToFit()
+                        })).frame(width:proxy.size.width,
+                                  height:proxy.size.width * 466.0 / 823.0)
+                        .accessibilityIdentifier("eventDetailmageView")
+                    }
      
                     EventInformationView(eventDetailViewModel: eventDetailViewModel)
                         .padding(.bottom, 20)
@@ -37,9 +40,7 @@ struct EventDetailView: View {
                     
                     Button {
                         
-                        guard let buyTicketURL = eventDetailViewModel.eventDetail.buyTicketURL else {
-                            return
-                        }
+                        guard let buyTicketURL = eventDetailViewModel.eventDetail.buyTicketURL else { return }
                         
                         if let url = URL(string: buyTicketURL) {
                             UIApplication.shared.open(url)
@@ -70,7 +71,7 @@ struct EventDetailView: View {
                 }.background(.black)
             }.background(.black)
         }.onAppear {
-            navigationBarSetting.customBarTitle = eventDetailViewModel.eventDetail.name
+            navigationBarSetting.customBarTitle = eventDetailViewModel.eventDetail.name ?? ""
             navigationBarSetting.navigationBarMode = .eventDetail
         }.onDisappear {
             navigationBarSetting.showEventDetail = false
@@ -92,11 +93,12 @@ struct EventDetailView: View {
             VStack(spacing: 0) {
                 
                 HStack() {
-                    Text(eventDetailViewModel.eventDetail.name)
+                    Text(eventDetailViewModel.eventDetail.name ?? "")
                         .font(.title2)
                         .foregroundColor(Color.white)
                         .frame(alignment: .leading)
                         .padding([.leading, .top] , 10.0)
+                        .accessibilityIdentifier("eventInfomationNameView")
                     Spacer()
                     Image(systemName: "heart.fill")
                         .resizable()
@@ -110,6 +112,7 @@ struct EventDetailView: View {
                                     information: "Until " + openingDate)
                     .padding(.top, 16.0)
                     .padding(.bottom, 4.0)
+                    .accessibilityIdentifier("eventInfomationDateView")
                 }
                 
                 Divider()
@@ -120,38 +123,45 @@ struct EventDetailView: View {
                 informationView(imageString: "location.circle",
                                 information: "Discover Nearby")
                     .padding([.top, .bottom], 8.0)
-                
+                    .accessibilityIdentifier("eventInfomationDiscoverNearbyView")
+
+
                 informationView(imageString: "globe.americas.fill",
-                                information:  eventDetailViewModel.eventDetail.address)
+                                information:  eventDetailViewModel.eventDetail.address ?? "")
                     .padding([.top, .bottom], 8.0)
-                
+                    .accessibilityIdentifier("eventInfomationAddressView")
+
+
                 informationView(imageString: "globe.americas.fill",
                                 information: "Add to ltinerary")
                     .padding([.top, .bottom], 8.0)
-                
+                    .accessibilityIdentifier("eventInfomationAddToLtineraryView")
+
+
                 Divider()
                     .frame(height: 2.0)
                     .overlay(Color(red: 0.233, green: 0.237, blue: 0.242))
                     .padding([.leading, .trailing], 6.0)
-                
+
                 VStack {
-                    
-                    let displayDescription = isReadMore ? eventDetailViewModel.eventDetail.shortDescription +
-                                                          eventDetailViewModel.eventDetail.moreDescription :
-                                                          eventDetailViewModel.eventDetail.shortDescription
+
+                    let displayDescription = isReadMore ? (eventDetailViewModel.eventDetail.briefDescription ?? "") +
+                                                          (eventDetailViewModel.eventDetail.moreDescription ?? "") :
+                                                          (eventDetailViewModel.eventDetail.briefDescription ?? "")
                     Text(displayDescription)
                         .foregroundColor(.white)
                         .padding(.top, 8)
                         .padding([.leading, .trailing], 10)
+                        .accessibilityIdentifier("eventInfomationDescriptionView")
                     Spacer()
                 }.frame(height: isReadMore ? nil : 100.0)
                     .transition(isReadMore ? .move(edge: .top) : .move(edge: .bottom))
-                    
-                
+
+
                 HStack {
-                    
+
                     Spacer()
-                    
+
                     Button {
                         withAnimation {
                             isReadMore.toggle()
@@ -160,7 +170,7 @@ struct EventDetailView: View {
                         Text(buttonString)
                             .foregroundColor(.red)
                             .font(.subheadline)
-                        
+
                         if isReadMore {
                             Triangle()
                                 .fill(.red)
@@ -170,10 +180,11 @@ struct EventDetailView: View {
                                 .fill(.red)
                                 .frame(width: 10  , height: 10)
                         }
-                    
-                        
-                            
+
+
+
                     }.padding(.trailing, 10)
+                     .accessibilityIdentifier("eventInfomationShowMoreButton")
                 }
             }
         }
@@ -224,6 +235,7 @@ struct EventDetailView: View {
                         let keys = pricesDictionary.map { $0.key }
                         ForEach(keys, id:\.self) { key in
                             priceView(ticketName: key, price: pricesDictionary[key])
+                                .accessibilityIdentifier("eventPrice" + key.firstCapitalized + "View")
                         }
                     }
 

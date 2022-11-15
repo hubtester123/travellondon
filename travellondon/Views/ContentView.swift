@@ -84,14 +84,14 @@ struct ContentView: View {
                                 Text(tabItemString[1])
                             }
                         }.tag(SelectedTab.categories)
-                    TabView2()
+                    Text("Hi")
                         .tabItem {
                             VStack{
                                 Image(tabItemImage[2])
                                 Text(tabItemString[2])
                             }
                         }.tag(SelectedTab.saved)
-                    TabView2()
+                    Text("Hi")
                         .tabItem {
                             VStack{
                                 Image(tabItemImage[3])
