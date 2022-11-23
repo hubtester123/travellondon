@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A8807E54291D1B1A0016E32B /* NavigationBarSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5D01290896FD00734853 /* NavigationBarSetting.swift */; };
-		A8807E55291D1B210016E32B /* StringProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5D4F2912802500734853 /* StringProtocol.swift */; };
 		A8807E56291D1B250016E32B /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5CFF290895DD00734853 /* CategoryListViewModel.swift */; };
 		A8807E57291D1B270016E32B /* EventDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5D3F290FD1F900734853 /* EventDetailViewModel.swift */; };
 		A8807E58291D1B2F0016E32B /* DisplayCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5CFD2908445A00734853 /* DisplayCategory.swift */; };
@@ -44,6 +43,9 @@
 		A88DC4872906013E00252F8A /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BA70E628FF160600D9B122 /* MoreView.swift */; };
 		A88DC4882906014E00252F8A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88DC4652903FC3800252F8A /* Constant.swift */; };
 		A88DC4892906015100252F8A /* travellondonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BA70A928FD611500D9B122 /* travellondonApp.swift */; };
+		A89090B8292CD5DF009F837B /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89090B7292CD5DF009F837B /* EventService.swift */; };
+		A89090BA292CD6C8009F837B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89090B9292CD6C8009F837B /* NetworkService.swift */; };
+		A89090BD292D208E009F837B /* ParseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89090BC292D208E009F837B /* ParseProtocol.swift */; };
 		A89975AC2912ED490087F8D8 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89975AB2912ED490087F8D8 /* Drawing.swift */; };
 		A8B1B354291B377600B941C8 /* EventDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1B353291B377600B941C8 /* EventDetail.swift */; };
 		A8B1B356291D182500B941C8 /* Parsor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B1B355291D182500B941C8 /* Parsor.swift */; };
@@ -107,6 +109,9 @@
 		A88DC46F2904A99C00252F8A /* ViewControlSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControlSetting.swift; sourceTree = "<group>"; };
 		A88DC4712904AF9100252F8A /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		A88DC4752905EF6800252F8A /* LocalizationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManagerTests.swift; sourceTree = "<group>"; };
+		A89090B7292CD5DF009F837B /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
+		A89090B9292CD6C8009F837B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A89090BC292D208E009F837B /* ParseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseProtocol.swift; sourceTree = "<group>"; };
 		A89975AB2912ED490087F8D8 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		A8B1B353291B377600B941C8 /* EventDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetail.swift; sourceTree = "<group>"; };
 		A8B1B355291D182500B941C8 /* Parsor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsor.swift; sourceTree = "<group>"; };
@@ -186,7 +191,6 @@
 			children = (
 				A88DC4682903FDA100252F8A /* UICollectionReusableView.swift */,
 				A88DC4712904AF9100252F8A /* UINavigationController.swift */,
-				A8EA5D4F2912802500734853 /* StringProtocol.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -214,6 +218,34 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A89090B6292CD5C4009F837B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A89090B7292CD5DF009F837B /* EventService.swift */,
+				A89090B9292CD6C8009F837B /* NetworkService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		A89090BB292D2084009F837B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A89090BC292D208E009F837B /* ParseProtocol.swift */,
+				A8EA5D4F2912802500734853 /* StringProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A89090BE292D210D009F837B /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				A8BA70F92901321A00D9B122 /* Setting.swift */,
+				A8EA5D01290896FD00734853 /* NavigationBarSetting.swift */,
+				A88DC46F2904A99C00252F8A /* ViewControlSetting.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		A8BA709D28FD611500D9B122 = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +269,8 @@
 		A8BA70A828FD611500D9B122 /* travellondon */ = {
 			isa = PBXGroup;
 			children = (
+				A89090BB292D2084009F837B /* Protocol */,
+				A89090B6292CD5C4009F837B /* API */,
 				A8EA5D4929103CE800734853 /* UI */,
 				A88DC4672903FD7C00252F8A /* Extension */,
 				A8BA71012901A0FC00D9B122 /* ViewModel */,
@@ -345,9 +379,7 @@
 		A8BA70F82901320E00D9B122 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A8BA70F92901321A00D9B122 /* Setting.swift */,
-				A8EA5D01290896FD00734853 /* NavigationBarSetting.swift */,
-				A88DC46F2904A99C00252F8A /* ViewControlSetting.swift */,
+				A89090BE292D210D009F837B /* Setting */,
 				A8BA70FF2901A06900D9B122 /* Event.swift */,
 				A8EA5CFD2908445A00734853 /* DisplayCategory.swift */,
 				A8B1B353291B377600B941C8 /* EventDetail.swift */,
@@ -524,13 +556,16 @@
 			files = (
 				A88DC46E2904064700252F8A /* EventDetailView.swift in Sources */,
 				A8BA71032901A11200D9B122 /* ExploreListViewModel.swift in Sources */,
+				A89090BD292D208E009F837B /* ParseProtocol.swift in Sources */,
 				A8EA5D502912802500734853 /* StringProtocol.swift in Sources */,
 				A8BA70FA2901321A00D9B122 /* Setting.swift in Sources */,
 				A88DC4662903FC3800252F8A /* Constant.swift in Sources */,
 				A8EA5D00290895DD00734853 /* CategoryListViewModel.swift in Sources */,
 				A8BA71002901A06900D9B122 /* Event.swift in Sources */,
+				A89090B8292CD5DF009F837B /* EventService.swift in Sources */,
 				A8EA5D40290FD1F900734853 /* EventDetailViewModel.swift in Sources */,
 				A89975AC2912ED490087F8D8 /* Drawing.swift in Sources */,
+				A89090BA292CD6C8009F837B /* NetworkService.swift in Sources */,
 				A88DC46B2903FF7D00252F8A /* CategoriesCellView.swift in Sources */,
 				A8BA70EF28FF545A00D9B122 /* LocalizationManager.swift in Sources */,
 				A8BA70E728FF160600D9B122 /* MoreView.swift in Sources */,
@@ -567,7 +602,6 @@
 				A88DC47B2906003400252F8A /* Setting.swift in Sources */,
 				A88DC4812906012700252F8A /* Event.swift in Sources */,
 				A88DC4882906014E00252F8A /* Constant.swift in Sources */,
-				A8807E55291D1B210016E32B /* StringProtocol.swift in Sources */,
 				A88DC4892906015100252F8A /* travellondonApp.swift in Sources */,
 				A88DC4842906013700252F8A /* ExplorerCellView.swift in Sources */,
 				A8807E5B291D1B390016E32B /* Parsor.swift in Sources */,

@@ -17,9 +17,10 @@ struct PageView<Page: View>: View {
     }
 }
 
-struct PageView_Previews: PreviewProvider {
-    static var previews: some View {
-        let eventDetailViewModel = EventDetailViewModel()
-        PageView(pages: [Image(eventDetailViewModel.eventDetail.image[1])])
-    }
-}
+//struct PageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let eventDetailViewModel = EventDetailViewModel()
+//        PageView(pages: [Image(eventDetailViewModel.eventDetail.image[1])])
+//            .onAppear(eventDetailViewModel.getEventDetail())
+//    }
+//}

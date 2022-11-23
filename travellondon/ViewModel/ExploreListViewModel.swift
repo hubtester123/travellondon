@@ -8,7 +8,7 @@
 import Foundation
 
 final class ExploreListViewModel: ObservableObject {
-    
-    @Published var events: [Event] = try! loadFileToJSON("eventData.json", type: [Event].self) as! [Event]
+
+    @Published var events: [Event] = try! loadFileTo(Event.self, from: "eventData.json") as! [Event]
 }
 

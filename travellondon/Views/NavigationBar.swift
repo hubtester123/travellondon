@@ -52,12 +52,14 @@ struct NavigationBar: View {
                         .font(.system(size: 22))
                 }.padding([.leading, .trailing], 10)
                 .accessibilityIdentifier("eventDetailNavigationBarBackButton")
+                Spacer()
                 Text(localizedString(key:navigationBarSetting.navigationBarTitle, language:setting.appLanguage))
                     .font(navigationBarSetting.navigationBarFont)
                     .fontWeight(navigationBarSetting.navigationBarFontWeight)
                     .foregroundColor(Color.white)
                     .lineLimit(1)
                     .accessibilityIdentifier("eventDetailNavigationBarTitleLabel")
+                Spacer()
                 Button {
                 } label: {
                     Image(systemName: "square.and.arrow.up")

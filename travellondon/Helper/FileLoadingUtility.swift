@@ -12,7 +12,7 @@ enum FileLoadingError: Error, Equatable {
     case cannotLoadFileError(String)
 }
 
-func loadFileToJSON<T>(_ filename:String, type: T) throws -> Any? {
+func loadFileTo<T:ParseProtocol>(_ type: T.Type, from filename:String) throws -> Any? {
     
     let data: Data
 
@@ -28,17 +28,7 @@ func loadFileToJSON<T>(_ filename:String, type: T) throws -> Any? {
     }
     
     do {
-        
-        if T.self == EventDetail.Type.self {
-            return try parseJSONToEventDetail(data: data)
-        }
-        
-        if T.self == [Event].Type.self {
-            return try parseJSONArrayToEventArray(data: data)
-        }
-        
-        return nil
-        
+        return try parseJSON(type, from: data)
     } catch let error as NSError {
         print("Failed to load: \(error.localizedDescription)")
     }

@@ -16,7 +16,7 @@ class NavigationBarSetting: ObservableObject {
     @Published var navigationBarMode:NagvigationBarMode = .defaultValue
     @Published var showEventDetail = false
     
-    var customBarTitle:String = ""
+    @Published var customBarTitle:String = ""
     
     var navigationBarTitle: String {
         switch (navigationBarMode) {

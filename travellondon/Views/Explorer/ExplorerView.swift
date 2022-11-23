@@ -13,6 +13,8 @@ struct ExplorerView: View {
     
     private var exploreListViewModel = ExploreListViewModel()
     
+    @StateObject private var eventDetailViewModel = EventDetailViewModel()
+    
     init() {
         UICollectionView.appearance().backgroundColor = .clear
     }
@@ -24,7 +26,7 @@ struct ExplorerView: View {
                     
                     ZStack {
                         ExplorerCellView(event: event)
-                        NavigationLink(destination: EventDetailView().navigationBarBackButtonHidden(true),
+                        NavigationLink(destination: EventDetailView(eventDetailViewModel: eventDetailViewModel).navigationBarBackButtonHidden(true),
                                        isActive: $navigationBarSetting.showEventDetail) {
                             EmptyView()
                         }

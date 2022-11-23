@@ -12,7 +12,7 @@ struct EventDetailView: View {
     
     @EnvironmentObject var navigationBarSetting: NavigationBarSetting
     
-    private var eventDetailViewModel = EventDetailViewModel()
+    @ObservedObject var eventDetailViewModel: EventDetailViewModel
     
     var body: some View {
         
@@ -22,8 +22,7 @@ struct EventDetailView: View {
                 
                 VStack(spacing: 0) {
                     
-                    
-                    if let imageArray = eventDetailViewModel.eventDetail.image {
+                    if let imageArray = eventDetailViewModel.eventDetail?.image {
                         PageView(pages:imageArray.map({ imageString in
                             Image(imageString)
                                 .resizable()
@@ -40,7 +39,7 @@ struct EventDetailView: View {
                     
                     Button {
                         
-                        guard let buyTicketURL = eventDetailViewModel.eventDetail.buyTicketURL else { return }
+                        guard let buyTicketURL = eventDetailViewModel.eventDetail?.buyTicketURL else { return }
                         
                         if let url = URL(string: buyTicketURL) {
                             UIApplication.shared.open(url)
@@ -71,17 +70,21 @@ struct EventDetailView: View {
                 }.background(.black)
             }.background(.black)
         }.onAppear {
-            navigationBarSetting.customBarTitle = eventDetailViewModel.eventDetail.name ?? ""
             navigationBarSetting.navigationBarMode = .eventDetail
+            eventDetailViewModel.getEventDetail()
         }.onDisappear {
             navigationBarSetting.showEventDetail = false
             navigationBarSetting.navigationBarMode = .defaultValue
+        }.onChange(of: eventDetailViewModel.eventDetail?.name) { newValue in
+            if let eventDetailName = newValue {
+                navigationBarSetting.customBarTitle = eventDetailName
+            }
         }
     }
     
     struct EventInformationView: View {
         
-        var eventDetailViewModel:EventDetailViewModel
+        @ObservedObject var eventDetailViewModel:EventDetailViewModel
         
         //Show more Button
         @State private var isReadMore: Bool = false
@@ -93,7 +96,7 @@ struct EventDetailView: View {
             VStack(spacing: 0) {
                 
                 HStack() {
-                    Text(eventDetailViewModel.eventDetail.name ?? "")
+                    Text(eventDetailViewModel.eventDetail?.name ?? "")
                         .font(.title2)
                         .foregroundColor(Color.white)
                         .frame(alignment: .leading)
@@ -107,7 +110,7 @@ struct EventDetailView: View {
                         .foregroundColor(.gray)
                 }
                 
-                if let openingDate = eventDetailViewModel.eventDetail.openingDate {
+                if let openingDate = eventDetailViewModel.eventDetail?.openingDate {
                     informationView(imageString: "calendar",
                                     information: "Until " + openingDate)
                     .padding(.top, 16.0)
@@ -127,7 +130,7 @@ struct EventDetailView: View {
 
 
                 informationView(imageString: "globe.americas.fill",
-                                information:  eventDetailViewModel.eventDetail.address ?? "")
+                                information:  eventDetailViewModel.eventDetail?.address ?? "")
                     .padding([.top, .bottom], 8.0)
                     .accessibilityIdentifier("eventInfomationAddressView")
 
@@ -145,9 +148,9 @@ struct EventDetailView: View {
 
                 VStack {
 
-                    let displayDescription = isReadMore ? (eventDetailViewModel.eventDetail.briefDescription ?? "") +
-                                                          (eventDetailViewModel.eventDetail.moreDescription ?? "") :
-                                                          (eventDetailViewModel.eventDetail.briefDescription ?? "")
+                    let displayDescription = isReadMore ? (eventDetailViewModel.eventDetail?.briefDescription ?? "") +
+                                                          (eventDetailViewModel.eventDetail?.moreDescription ?? "") :
+                                                          (eventDetailViewModel.eventDetail?.briefDescription ?? "")
                     Text(displayDescription)
                         .foregroundColor(.white)
                         .padding(.top, 8)
@@ -211,7 +214,7 @@ struct EventDetailView: View {
     
     struct EventPriceView: View {
         
-        var eventDetailViewModel:EventDetailViewModel
+        @ObservedObject var eventDetailViewModel:EventDetailViewModel
         
         var body: some View {
             
@@ -231,7 +234,7 @@ struct EventDetailView: View {
                         .frame(height: 2.0)
                         .overlay(Color(red: 0.538, green: 0.538, blue: 0.534))
                         .padding([.top, .bottom, .leading, .trailing],10.0)
-                    if let pricesDictionary = eventDetailViewModel.eventDetail.prices {
+                    if let pricesDictionary = eventDetailViewModel.eventDetail?.prices {
                         let keys = pricesDictionary.map { $0.key }
                         ForEach(keys, id:\.self) { key in
                             priceView(ticketName: key, price: pricesDictionary[key])
@@ -266,7 +269,9 @@ struct EventDetailView: View {
 }
 
 struct EventDetailView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        EventDetailView()
+        let eventDetailViewModel = EventDetailViewModel()
+        EventDetailView(eventDetailViewModel: eventDetailViewModel)
     }
 }

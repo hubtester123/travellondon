@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct EventDetail: Codable, Hashable{
-    
+struct EventDetail: Codable, Hashable, ParseProtocol{
     
     var address: String
     var briefDescription: String
@@ -34,7 +33,6 @@ struct EventDetail: Codable, Hashable{
 //    }
     
     
-    
     var prices:[String:Double]?
     
     init(address: String, briefDescription: String, buyTicketURL: String? = nil, date: String, moreDescription: String, name: String, image: [String], prices: [String : Double]? = nil) {
@@ -46,5 +44,16 @@ struct EventDetail: Codable, Hashable{
         self.name = name
         self.image = image
         self.prices = prices
+    }
+    
+    init(_ jsonObject: [String : Any]) {
+        self.address = jsonObject["address"] as? String ?? ""
+        self.briefDescription = jsonObject["briefDescription"] as? String ?? ""
+        self.buyTicketURL =  jsonObject["buyTicketURL"] as? String
+        self.date = jsonObject["date"] as? String ?? ""
+        self.moreDescription = jsonObject["moreDescription"] as? String ?? ""
+        self.name = jsonObject["name"] as? String ?? ""
+        self.image = jsonObject["image"] as? [String] ?? []
+        self.prices = jsonObject["prices"] as? [String : Double]
     }
 }

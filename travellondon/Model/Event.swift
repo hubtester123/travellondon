@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct Event: Codable, Hashable{
-    
+struct Event: Codable, Hashable, ParseProtocol{
+
+        
     var name: String
     
     private var imageUrl: String
@@ -20,10 +21,16 @@ struct Event: Codable, Hashable{
     var gifLink: URL? {
         URL(string: gifUrl) ?? nil
     }
-    
+        
     init(name: String, imageUrl: String, gifUrl: String) {
         self.name = name
         self.imageUrl = imageUrl
         self.gifUrl = gifUrl
+    }
+    
+    init(_ jsonObject: [String : Any]) {
+        self.name = jsonObject["name"] as? String ?? ""
+        self.imageUrl = jsonObject["imageUrl"] as? String ?? ""
+        self.gifUrl = jsonObject["gifUrl"] as? String ?? ""
     }
 }
