@@ -11,13 +11,14 @@ import Combine
 enum NetworkError:Error {
     case decodeURLError
     case apiError(Int)
-    case parseError
+    case parseJsonError
+    case parseTypeError
     case unknown
 }
 
 struct NetworkService {
     
-    static func request<T:ParseProtocol>(request:URLRequest) -> AnyPublisher<T, NetworkError> {
+    static func request<T:ParseProtocol>(request:URLRequest, for type:T.Type) -> AnyPublisher<Any?, NetworkError> {
         
         return URLSession.shared
                 .dataTaskPublisher(for: request)
@@ -33,9 +34,9 @@ struct NetworkService {
                 }
                 
                 do {
-                    return try parseJSON(T.self, from: data) as! T
+                    return try parseJSON(type, from: data)
                 } catch {
-                    throw NetworkError.parseError
+                    throw NetworkError.parseJsonError
                 }
                                 
             }.mapError { error in

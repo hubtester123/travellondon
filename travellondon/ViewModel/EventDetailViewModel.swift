@@ -11,10 +11,10 @@ import SwiftUI
 
 class EventDetailViewModel: ObservableObject, EventService {
     
-    @Published var eventDetail: EventDetail? = nil
-    
 //    @Published var eventDetail: EventDetail = try! loadFileTo(EventDetail.self, from:"eventDetailData.json") as! EventDetail
     
+    @Published var eventDetail: EventDetail? = nil
+
     private var cancellable = Set<AnyCancellable>()
     
     func getEventDetail() {
@@ -29,9 +29,8 @@ class EventDetailViewModel: ObservableObject, EventService {
                     break
                 }
             }) {
+                print("load event")
                 self.eventDetail = $0
-                
-                //self.navigationBarSetting.customBarTitle = $0.name
             }
             .store(in: &cancellable)
 

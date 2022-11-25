@@ -11,11 +11,12 @@ struct ExplorerView: View {
     
     @EnvironmentObject var navigationBarSetting: NavigationBarSetting
     
-    private var exploreListViewModel = ExploreListViewModel()
-    
+    @ObservedObject var exploreListViewModel: ExploreListViewModel
+        
     @StateObject private var eventDetailViewModel = EventDetailViewModel()
     
-    init() {
+    init(_ exploreListViewModel: ExploreListViewModel) {
+        self.exploreListViewModel = exploreListViewModel
         UICollectionView.appearance().backgroundColor = .clear
     }
     
@@ -37,11 +38,14 @@ struct ExplorerView: View {
             } .listStyle(.inset)
               .background(appMainColor)
         }.navigationBarBackButtonHidden(true)
+            .onAppear {
+                exploreListViewModel.getEventList()
+            }
     }
 }
 
-struct ExplorerView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExplorerView()
-    }
-}
+//struct ExplorerView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ExplorerView()
+//    }
+//}

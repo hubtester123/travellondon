@@ -35,7 +35,7 @@ struct CategoriesCellView: View {
     var body: some View {
         VStack(spacing:0) {
             HStack {
-                buttonView(destination: ExplorerView(),
+                buttonView(destination: MoreView(),
                            imageString: categories.displayCategories[0],
                            width: horizontalRectangularImageWidth,
                            height: horizontalRectangularImageHeight)

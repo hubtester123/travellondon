@@ -15,14 +15,17 @@ struct ContentView: View {
     @EnvironmentObject var viewControlSetting: ViewControlSetting
     @EnvironmentObject var navigationBarSetting: NavigationBarSetting
     
+    @StateObject private var exploreListViewModel = ExploreListViewModel()
     @State var selectedTab: SelectedTab = .explorer
     
     let tabItemMenu = ["explorer", "categories", "saved", "transport", "more"]
     var tabItemImage: [String] {
-        tabItemMenu.map{getTabItemImageName(imageName: $0, selectedTab: self.selectedTab)}
+        tabItemMenu
+            .map{getTabItemImageName(imageName: $0, selectedTab: self.selectedTab)}
     }
     var tabItemString: [String] {
-        tabItemMenu.map{localizedString(key:"tabbar_" + $0, language:setting.appLanguage)}
+        tabItemMenu
+            .map{localizedString(key:"tabbar_" + $0, language:setting.appLanguage)}
     }
     
     init() {
@@ -68,7 +71,7 @@ struct ContentView: View {
                      .background(.red)
                      .environmentObject(navigationBarSetting)
                 TabView(selection: $selectedTab) {
-                    ExplorerView()
+                    ExplorerView(exploreListViewModel)
                         .id(viewControlSetting.explorerRootViewId)
                         .tabItem {
                             VStack{
